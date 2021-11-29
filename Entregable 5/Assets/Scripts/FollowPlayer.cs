@@ -9,7 +9,7 @@ public class FollowPlayer : MonoBehaviour
 
     private void LateUpdate()
     {
-        //Esto hace que la camara siga al objeto con las cordenadas que le hemos dado antes
+        //Esto hace que la camara siga al objeto con una distancia que le hemos asignado antes
         transform.position = player.transform.position + offset;
     }
 }

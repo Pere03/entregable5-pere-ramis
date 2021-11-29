@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
 
     public float Speed = 10.0f;
-    public float verticalInput;
+    private float verticalInput;
     public float turnSpeed = 20.0f;
     public float zMax = 450f;
 
@@ -26,8 +26,8 @@ public class PlayerController : MonoBehaviour
         verticalInput = Input.GetAxis("Vertical");
         transform.Rotate(Vector3.right * turnSpeed * Time.deltaTime * verticalInput);
 
-        //Esto hace que si supera el limite de Z, se acaba el juego
-        if (transform.position.z >= 450)
+        //Esto hace que si supera el limite de zMax, se acaba el juego
+        if (transform.position.z >= zMax)
         {
             Debug.Log("THE END");
             Time.timeScale = 0;
